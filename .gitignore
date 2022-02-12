@@ -59,4 +59,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 #Script Only
-!/Assets/Script
+
+
+!Assets/Tofu Free
+
