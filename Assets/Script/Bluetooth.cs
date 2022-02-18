@@ -7,8 +7,7 @@ public class Bluetooth : MonoBehaviour
 {
     public ConnectType connectType;
     CubeManager cm;
-    Cube cube;
-
+    public string pose;
     async void Start()
     {
         // ConnectType.Auto - ビルド対象に応じて内部実装が自動的に変わる
@@ -28,7 +27,7 @@ public class Bluetooth : MonoBehaviour
         {
             cube.TurnLedOn(255, 0, 0, 9);
             cube.Move(50, -50, 100);
-            Debug.Log(cube.pose);
+            pose = cube.pose.ToString();
         }
     }
 }
