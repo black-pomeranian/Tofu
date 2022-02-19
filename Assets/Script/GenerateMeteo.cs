@@ -6,7 +6,7 @@ public class GenerateMeteo : MonoBehaviour
 {
     GameObject meteo1, meteo2, meteo3, meteo4, meteo5;
     float count = 0.0f;
-    float diff = 3.0f;
+    [SerializeField] float diff = 3.0f;
 
     void Start()
     {

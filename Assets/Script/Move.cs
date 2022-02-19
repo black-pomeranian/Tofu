@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    float speed = 0.1f;
+    [SerializeField] float speed = 0.01f;
     Bluetooth bluetooth;
     string pose;
     float rot_x, rot_z = 0f;
@@ -27,27 +27,39 @@ public class Move : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow) || pose=="Back")
         {
-            pos.y += speed;
-            rot_x = 0;
-            rot_z = 20;
+            if (pos.y < 0.25)
+            {
+                pos.y += speed;
+                rot_x = 0;
+                rot_z = 20;
+            } 
         }
         else if (Input.GetKey(KeyCode.DownArrow) || pose == "Front")
         {
-            pos.y -= speed;
-            rot_x = 0;
-            rot_z = -20;
+            if (-0.3 < pos.y)
+            {
+                pos.y -= speed;
+                rot_x = 0;
+                rot_z = -20;
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow) || pose == "Right")
         {
-            pos.z -= speed;
-            rot_x = -20;
-            rot_z = 0;
+            if (-0.5 < pos.z)
+            {
+                pos.z -= speed;
+                rot_x = -20;
+                rot_z = 0;
+            }
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || pose == "Left")
         {
-            pos.z += speed;
-            rot_x = 20;
-            rot_z = 0;
+            if (pos.z < 0.5)
+            {
+                pos.z += speed;
+                rot_x = 20;
+                rot_z = 0;
+            }   
         }
         else
         {
