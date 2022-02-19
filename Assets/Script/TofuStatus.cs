@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TofuStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool gameOver = false;
+    [SerializeField] GameObject explosionPrefab;
     void Start()
     {
         
@@ -18,11 +19,12 @@ public class TofuStatus : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ok");
         if (other.gameObject.tag == "Meteo")
         {
-            Destroy(other.gameObject);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
             Debug.Log("Game Over");
+            gameOver = true;
         }
     }
 }
