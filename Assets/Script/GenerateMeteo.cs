@@ -27,23 +27,23 @@ public class GenerateMeteo : MonoBehaviour
             int rnd = Random.Range(0, 5);
             if(rnd == 0)
             {
-                Instantiate(meteo1, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+                Instantiate(meteo1, new Vector3(0.0f, 2.0f, 50.0f), Quaternion.identity);
             }
             else if (rnd == 1)
             {
-                Instantiate(meteo2, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+                Instantiate(meteo2, new Vector3(0.0f, 2.0f, 50.0f), Quaternion.identity);
             }
             else if (rnd == 2)
             {
-                Instantiate(meteo3, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+                Instantiate(meteo3, new Vector3(0.0f, 2.0f, 50.0f), Quaternion.identity);
             }
             else if (rnd == 3)
             {
-                Instantiate(meteo4, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+                Instantiate(meteo4, new Vector3(0.0f, 2.0f, 50.0f), Quaternion.identity);
             }
             else if (rnd == 4)
             {
-                Instantiate(meteo5, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+                Instantiate(meteo5, new Vector3(0.0f, 2.0f, 50.0f), Quaternion.identity);
             }
         }
         
