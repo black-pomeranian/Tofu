@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 1.0f;
+    float speed = 0.1f;
     Bluetooth bluetooth;
     string pose;
-    // Start is called before the first frame update
+    float rot_x, rot_z = 0f;
+    Transform cubeTransform;
+
+
     void Start()
     {
+        cubeTransform = this.transform;
+
         bluetooth = this.gameObject.GetComponent<Bluetooth>();
         pose = bluetooth.pose;
     }
@@ -17,21 +22,38 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || pose=="Up")
+        Vector3 pos = cubeTransform.position;
+
+        if (Input.GetKey(KeyCode.UpArrow) || pose=="Front")
         {
-            transform.position += transform.up * speed * Time.deltaTime;
+            pos.y += speed;
+            rot_x = 0;
+            rot_z = 20;
         }
-        if (Input.GetKey(KeyCode.DownArrow) || pose == "Down")
+        else if (Input.GetKey(KeyCode.DownArrow) || pose == "Back")
         {
-            transform.position -= transform.up * speed * Time.deltaTime;
+            pos.y -= speed;
+            rot_x = 0;
+            rot_z = -20;
         }
-        if (Input.GetKey(KeyCode.RightArrow) || pose == "Right")
+        else if (Input.GetKey(KeyCode.RightArrow) || pose == "Right")
         {
-            transform.position += transform.right * speed * Time.deltaTime;
+            pos.z -= speed;
+            rot_x = -20;
+            rot_z = 0;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || pose == "Left")
+        else if (Input.GetKey(KeyCode.LeftArrow) || pose == "Left")
         {
-            transform.position -= transform.right * speed * Time.deltaTime;
+            pos.z += speed;
+            rot_x = 20;
+            rot_z = 0;
         }
+        else
+        {
+            rot_x = 0;
+            rot_z = 0;
+        }
+        cubeTransform.position = pos;
+        cubeTransform.rotation = Quaternion.Euler(rot_x, 0, rot_z);
     }
 }

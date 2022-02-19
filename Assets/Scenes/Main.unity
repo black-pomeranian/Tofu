@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectType: 2
+  pose: 
 --- !u!1 &1461477870
 GameObject:
   m_ObjectHideFlags: 0
