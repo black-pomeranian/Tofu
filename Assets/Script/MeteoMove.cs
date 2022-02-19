@@ -15,7 +15,11 @@ public class MeteoMove : MonoBehaviour
     void Update()
     {
         Vector3 pos = meteoTransform.position;
-        pos.z -= meteoSpeed;
+        pos.x -= meteoSpeed;
+        if (pos.x < -10)
+        {
+            Destroy(this.gameObject);
+        }
         meteoTransform.position = pos;
     }
 }
