@@ -24,7 +24,6 @@ public class Move : MonoBehaviour
     {
         Vector3 pos = cubeTransform.position;
         pose = bluetooth.pose;
-        Debug.Log(pose);
 
         if (Input.GetKey(KeyCode.UpArrow) || pose=="Back")
         {
