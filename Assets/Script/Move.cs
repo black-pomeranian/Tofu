@@ -16,21 +16,23 @@ public class Move : MonoBehaviour
         cubeTransform = this.transform;
 
         bluetooth = this.gameObject.GetComponent<Bluetooth>();
-        pose = bluetooth.pose;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 pos = cubeTransform.position;
+        pose = bluetooth.pose;
+        Debug.Log(pose);
 
-        if (Input.GetKey(KeyCode.UpArrow) || pose=="Front")
+        if (Input.GetKey(KeyCode.UpArrow) || pose=="Back")
         {
             pos.y += speed;
             rot_x = 0;
             rot_z = 20;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || pose == "Back")
+        else if (Input.GetKey(KeyCode.DownArrow) || pose == "Front")
         {
             pos.y -= speed;
             rot_x = 0;
