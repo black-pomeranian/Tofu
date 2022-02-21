@@ -21,10 +21,11 @@ public class TofuStatus : MonoBehaviour
     {
         if (other.gameObject.tag == "Meteo")
         {
+            gameOver = true;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Debug.Log("Game Over");
-            gameOver = true;
+            
         }
     }
 }

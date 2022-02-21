@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CalcScore : MonoBehaviour
+public class GameStatus : MonoBehaviour
 {
-    public int score = 0;
-
     void Start()
     {
         
     }
 
+    // Update is called once per frame
     void Update()
     {
-        score += (int)Mathf.Ceil(Time.deltaTime * 10.0f);
-        //Debug.Log(score);
+        
     }
 }
