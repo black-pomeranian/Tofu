@@ -17,7 +17,6 @@ public class ShowGameOverTxt : MonoBehaviour
     void Update()
     {
         gameover = ts.gameOver;
-        Debug.Log(gameover);
         if (gameover)
         {
             gameOverTxt.SetActive(true);
