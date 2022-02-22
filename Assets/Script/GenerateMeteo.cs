@@ -9,6 +9,8 @@ public class GenerateMeteo : MonoBehaviour
     [SerializeField] float diff = 3.0f;
     TofuStatus ts;
     bool gameover = false;
+    float time;
+    float size;
 
     void Start()
     {
@@ -27,6 +29,8 @@ public class GenerateMeteo : MonoBehaviour
         gameover = ts.gameOver;
         if (!gameover){
             count += Time.deltaTime;
+            time += Time.deltaTime;
+            size = Random.Range(1.0f, 1.0f+time/10);
             if (diff < count)
             {
                 count = 0.0f;
@@ -37,23 +41,28 @@ public class GenerateMeteo : MonoBehaviour
 
                 if (rnd == 0)
                 {
-                    Instantiate(meteo1, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    GameObject meteo = Instantiate(meteo1, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    meteo.transform.localScale = new Vector3(size, size, size);
                 }
                 else if (rnd == 1)
                 {
-                    Instantiate(meteo2, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    GameObject meteo = Instantiate(meteo2, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    meteo.transform.localScale = new Vector3(size, size, size);
                 }
                 else if (rnd == 2)
                 {
-                    Instantiate(meteo3, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    GameObject meteo = Instantiate(meteo3, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    meteo.transform.localScale = new Vector3(size, size, size);
                 }
                 else if (rnd == 3)
                 {
-                    Instantiate(meteo4, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    GameObject meteo = Instantiate(meteo4, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    meteo.transform.localScale = new Vector3(size, size, size);
                 }
                 else if (rnd == 4)
                 {
-                    Instantiate(meteo5, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    GameObject meteo = Instantiate(meteo5, new Vector3(pos_x, pos_y, pos_z), Quaternion.identity);
+                    meteo.transform.localScale = new Vector3(size, size, size);
                 }
             }
         }
