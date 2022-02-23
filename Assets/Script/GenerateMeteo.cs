@@ -6,7 +6,7 @@ public class GenerateMeteo : MonoBehaviour
 {
     GameObject meteo1, meteo2, meteo3, meteo4, meteo5;
     float count = 0.0f;
-    [SerializeField] float diff = 3.0f;
+    [SerializeField] float diff = 2.0f;
     TofuStatus ts;
     bool gameover = false;
     float time;
@@ -26,13 +26,24 @@ public class GenerateMeteo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (diff < 0)
+        {
+            diff = 2.0f;
+        }
+        
         gameover = ts.gameOver;
         if (!gameover){
             count += Time.deltaTime;
             time += Time.deltaTime;
             size = Random.Range(1.0f, 1.0f+time/10);
+
             if (diff < count)
             {
+                diff -= Time.deltaTime;
+                if (diff <= 0)
+                {
+                    diff = 0.1f;
+                }
                 count = 0.0f;
                 int rnd = Random.Range(0, 5);
                 float pos_x = 50.0f;
