@@ -19,13 +19,6 @@ public class Bluetooth : MonoBehaviour
 
     void Update()
     {
-        foreach (var cube in cm.syncCubes)
-        {
-            cube.TurnLedOn(255, 0, 0, 9);
-            cube.Move(50, -50, 100);
-            pose = cube.pose.ToString();
-            gs.isStart = true;
-        }
         if (gs.isToio)
         {
             foreach (var cube in cm.syncCubes)
