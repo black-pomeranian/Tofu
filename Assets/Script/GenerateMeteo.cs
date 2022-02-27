@@ -53,8 +53,8 @@ public class GenerateMeteo : MonoBehaviour
                     count = 0.0f;
                     int rnd = Random.Range(0, 5);
                     float pos_x = 50.0f;
-                    float pos_y = Random.Range(-0.2f, 0.2f);
-                    float pos_z = Random.Range(-0.3f, 0.3f);
+                    float pos_y = Random.Range(-0.17f, 0.17f);
+                    float pos_z = Random.Range(-0.25f, 0.25f);
 
                     if (rnd == 0)
                     {
