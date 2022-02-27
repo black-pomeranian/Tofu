@@ -7,6 +7,8 @@ public class GameStatus : MonoBehaviour
 
     public bool isToio = false;
     public bool isStart = false;
+    bool selectSound = true;
+    public AudioClip selectSE;
 
     void Start()
     {
@@ -16,6 +18,10 @@ public class GameStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(selectSound && (isToio || isStart)){
+            AudioSource.PlayClipAtPoint(selectSE, transform.position, 1f);
+            selectSound = false;
+        }
         Debug.Log(isStart);
     }
 }

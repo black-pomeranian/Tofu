@@ -1423,7 +1423,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6c9d8ab0b70744c8f8b7f7a6b3f90aa3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1521,6 +1521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isToio: 0
   isStart: 0
+  selectSE: {fileID: 8300000, guid: bfcedf6b5928241789006874eead796e, type: 3}
 --- !u!1 &1496441714
 GameObject:
   m_ObjectHideFlags: 0

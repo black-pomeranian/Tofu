@@ -6,7 +6,6 @@ public class WithKeybord : MonoBehaviour
 {
     GameStatus gs;
     GameObject startUI;
-    public AudioClip selectSE;
 
     void Start()
     {
@@ -15,7 +14,6 @@ public class WithKeybord : MonoBehaviour
     }
     public void OnClick()
     {
-        AudioSource.PlayClipAtPoint(selectSE, transform.position,100);
         gs.isStart = true;
         startUI.SetActive(false);
     }
