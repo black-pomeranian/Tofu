@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeteoMove : MonoBehaviour
 {
     Transform meteoTransform;
-    [SerializeField] float meteoSpeed = 0.1f;
+    [SerializeField] float meteoSpeed = 2f;
 
     void Start()
     {

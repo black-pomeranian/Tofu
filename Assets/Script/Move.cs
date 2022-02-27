@@ -29,7 +29,7 @@ public class Move : MonoBehaviour
             Vector3 pos = cubeTransform.position;
             pose = bluetooth.pose;
 
-            if (pose == "Front")
+            if (pose == "Back")
             {
                 if (pos.y < 0.25)
                 {
@@ -47,7 +47,7 @@ public class Move : MonoBehaviour
                     rot_z = -20;
                 }
             }
-            else if (pose == "Right")
+            else if (pose == "Left")
             {
                 if (-0.5 < pos.z)
                 {
@@ -56,7 +56,7 @@ public class Move : MonoBehaviour
                     rot_z = 0;
                 }
             }
-            else if (pose == "Left")
+            else if (pose == "Right")
             {
                 if (pos.z < 0.5)
                 {

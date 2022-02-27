@@ -33,7 +33,7 @@ public class GenerateMeteo : MonoBehaviour
         {
             if (diff < 0)
             {
-                diff = 2.0f;
+                diff = 1.0f;
             }
 
             gameover = ts.gameOver;
@@ -41,7 +41,7 @@ public class GenerateMeteo : MonoBehaviour
             {
                 count += Time.deltaTime;
                 time += Time.deltaTime;
-                size = Random.Range(1.0f, 1.0f + time / 10);
+                size = Random.Range(3.0f, 3.0f + time / 10);
 
                 if (diff < count)
                 {

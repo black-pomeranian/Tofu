@@ -19,6 +19,7 @@ public class Bluetooth : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(gs.isToio);
         if (gs.isToio)
         {
             foreach (var cube in cm.syncCubes)

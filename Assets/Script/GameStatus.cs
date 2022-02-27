@@ -22,6 +22,5 @@ public class GameStatus : MonoBehaviour
             AudioSource.PlayClipAtPoint(selectSE, transform.position, 1f);
             selectSound = false;
         }
-        Debug.Log(isStart);
     }
 }
