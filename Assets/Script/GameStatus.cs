@@ -5,6 +5,11 @@ using UnityEngine;
 public class GameStatus : MonoBehaviour
 {
 
+    void Awake()
+    {
+        Application.targetFrameRate = 60; //60FPSに設定
+    }
+
     public bool isToio = false;
     public bool isStart = false;
     bool selectSound = true;

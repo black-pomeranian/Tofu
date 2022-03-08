@@ -6,7 +6,7 @@ public class GenerateMeteo : MonoBehaviour
 {
     GameObject meteo1, meteo2, meteo3, meteo4, meteo5;
     float count = 0.0f;
-    [SerializeField] float diff = 2.0f;
+    public float diff = 1.0f;
     TofuStatus ts;
     bool gameover = false;
     float time;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] float speed = 0.01f;
+    public float speed = 0.01f;
     Bluetooth bluetooth;
     string pose;
     float rot_x, rot_z = 0f;
